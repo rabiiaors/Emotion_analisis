@@ -1,0 +1,111 @@
+/* static/css/style.css */
+
+@keyframes emojiAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes brightnessEffect {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4081, 0 0 40px #ff4081, 0 0 50px #ff4081; }
+    50% { text-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 45px #ff4081, 0 0 60px #ff4081, 0 0 75px #ff4081; }
+    100% { text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #ff4081, 0 0 80px #ff4081, 0 0 100px #ff4081; }
+}
+
+body {
+    background: linear-gradient(135deg, #FF6F61, #FFB74D, #4DB6AC, #673AB7);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.video-stream {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    max-width: 960px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.video-stream h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: textGlow 2s infinite alternate;
+}
+
+.video-stream img {
+    border-radius: 25px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.background-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-effect .emoji {
+    position: absolute;
+    font-size: 1.5em;
+    animation: emojiAnimation 10s infinite;
+    opacity: 0.8;
+    width: 2.5em;
+    height: 2.5em;
+    text-align: center;
+    line-height: 2.5em;
+    color: #FFEB3B;
+}
+
+.background-effect .brightness {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+    animation: brightnessEffect 6s infinite;
+}
